@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+button {
+  outline: none;
+  cursor: pointer;
+}
+:root {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: #000;
+}
+.content {
+  position: relative;
+  width: 640px;
+  height: 640px;
+  margin: 50px auto;
+}
+.content > .btn {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+.content > .btn button {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  background: rgb(86, 207, 167);
+  border: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+.pause-btn {
+  display: none;
+}
+.content > .pause-btn button {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+#snake-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 600px;
+  height: 600px;
+  background: rgb(46, 95, 83);
+  border: 20px solid rgb(129, 212, 191);
+}
+#snake-wrap > div {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+#snake-wrap > .snake-head {
+  background: #fff;
+}
+#snake-wrap > .snake-body {
+  animation: colorChange 5s infinite;
+  -webkit-animation: colorChange 5s infinite;
+}
+#snake-wrap > .food {
+  background: rgb(255, 0, 0);
+}
+
+.mask {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 3;
+}
+.mask > .alert-box {
+  position: relative;
+  margin: 300px auto;
+  width: 250px;
+  height: 150px;
+  background: rgb(255, 255, 255);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  box-shadow: 0 0 20px #fff;
+}
+.mask > .alert-box h3 {
+  text-align: center;
+  line-height: 50px;
+}
+
+.mask > .alert-box .alert-msg {
+  text-align: center;
+  color: #999999;
+  margin-top: 10px;
+}
+
+.mask > .alert-box button {
+  position: absolute;
+  top: 110px;
+  left: 50%;
+  padding: 5px 20px;
+  background: rgb(86, 207, 167);
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+
+@keyframes colorChange {
+  from {
+    background: rgb(92, 199, 218);
+    filter: hue-rotate(0deg);
+    -webkit-filter: hue-rotate(0deg);
+  }
+  to {
+    background: rgb(218, 92, 92);
+    filter: hue-rotate(360deg);
+    -webkit-filter: hue-rotate(360deg);
+  }
+}
